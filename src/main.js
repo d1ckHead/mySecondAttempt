@@ -22,6 +22,10 @@ app.get('/about',(req,res)=>{
     res.render('about')
 })
 
+app.get('/love',(req,res)=>{
+    res.send('Easter Egg Found')
+})
+
 app.get('/help',(req,res)=>{
     res.render('help')
 })
