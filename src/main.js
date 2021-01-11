@@ -13,6 +13,8 @@ app.set('view engine', 'hbs')
 app.set('views',viewsPath)
 
 
+let port = process.env.PORT || '3000'
+
 app.get('',(req,res)=>{
     res.render('index')
     
@@ -43,4 +45,4 @@ app.get('/weather',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('404 :(')
 })
-app.listen('3000')
+app.listen(port)
