@@ -9,6 +9,8 @@ let partialsPath = path.join(__dirname + '/../templates/partials')
 hbs.registerPartials(path.join(partialsPath))
 let viewsPath = path.join(__dirname + '/../templates/views')
 
+let port = process.env.PORT || '3000'
+
 app.set('view engine', 'hbs')
 app.set('views',viewsPath)
 
@@ -23,7 +25,7 @@ app.get('/about',(req,res)=>{
 })
 
 app.get('/love',(req,res)=>{
-    res.send('Easter Egg Found')
+    res.send('Easter Egg')
 })
 
 app.get('/help',(req,res)=>{
@@ -43,4 +45,4 @@ app.get('/weather',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('404 :(')
 })
-app.listen('3000')
+app.listen(port)
